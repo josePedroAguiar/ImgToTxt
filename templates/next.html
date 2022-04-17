@@ -1,0 +1,341 @@
+{% extends 'base.html' %}
+{% block body %}
+    <style>
+        /* Center the loader */
+        #loader1 {
+            position: absolute;
+            top:325px;
+            left:42.5%;
+            z-index: 1;
+        }
+
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #loader2 {
+            position: absolute;
+            top:325px;
+            left:42.5%;
+            z-index: 1;
+        }
+
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Add animation to "page content" */
+        .animate-bottom {
+            position: relative;
+            -webkit-animation-name: animatebottom;
+            -webkit-animation-duration: 1s;
+            animation-name: animatebottom;
+            animation-duration: 1s
+        }
+
+        @-webkit-keyframes animatebottom {
+            from { bottom:-100px; opacity:0 }
+            to { bottom:0px; opacity:1 }
+        }
+
+        @keyframes animatebottom {
+            from{ bottom:-100px; opacity:0 }
+            to{ bottom:0; opacity:1 }
+        }
+
+        #myDiv {
+            display: none;
+            text-align: center;
+        }
+    </style>
+    <script>
+        var myVar;
+
+        function myFunction() {
+            myVar = setTimeout(showPage, 3000);
+            if (darkMode === 'enabled') {
+                document.getElementById("loader2").style.display = "none";
+            }
+            else {
+                document.getElementById("loader1").style.display = "none";
+            }
+
+        }
+
+        function showPage() {
+            document.getElementById("loader2").style.display = "none";
+            document.getElementById("loader1").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+        }
+    </script>
+    <body class="w3-color w3-animate-right"  style="background-color: #02b75a" onload="myFunction()">
+    <div id="loader1"><script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+        <!---
+      <lord-icon
+               src="https://cdn.lordicon.com/buczzbzt.json"
+               trigger="loop"
+                colors="primary:#ffffff"
+               style="width:250px;height:250px">
+           <script src="https://cdn.lordicon.com/lusqsztk.js"></script></lord-icon>
+            !-->
+
+       <lord-icon
+                   src="https://cdn.lordicon.com/rwzqttux.json"
+                   trigger="loop"
+
+                   style="width:250px;height:250px">
+           </lord-icon>
+
+        </div>
+    <div id="loader2"><script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+        <!---
+      <lord-icon
+               src="https://cdn.lordicon.com/buczzbzt.json"
+               trigger="loop"
+                colors="primary:#ffffff"
+               style="width:250px;height:250px">
+           <script src="https://cdn.lordicon.com/lusqsztk.js"></script></lord-icon>
+            !-->
+
+        <lord-icon
+                src="https://cdn.lordicon.com/rwzqttux.json"
+                trigger="loop"
+                colors="primary:#ffffff"
+                style="width:250px;height:250px">
+        </lord-icon>
+
+    </div>
+    <div style="display:none;" id="myDiv" class="animate-bottom">
+    <nav class="navbar navbar-expand-lg" style="background: transparent; height: 70px;">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div style="display: none">
+                <ul class="navbar-nav ms-auto m-2 mb-lg-0" >
+                  <span class="w3-hide-small w3-hide-medium">
+                    <li class="nav-item ml-1 " style="">
+                      <i class="bi bi-sun"></i>
+                    </li>
+                  </span>
+                    <li class="nav-item ml-1 " style="padding-left:10px;padding-right:10px;">
+                        <span class="w3-hide-large"><p style="margin-bottom: 2px">Darkmode</p></span>
+                        <div class="value" id="onOffSwitch">
+                            <div class="onoffswitch">
+                                <label class="switch">
+                                    <input id="button_switch" type="checkbox">
+                                    <div class="slider round"></div>
+                                </label>
+                            </div>
+                        </div>
+
+                    </li>
+
+                    <li class="nav-item ml-1 "style="padding-right:20px;">
+                        <span class="w3-hide-small w3-hide-medium"> <i class="fa fa-moon-o"></i></span>
+                    </li>
+                </ul>
+            </div>
+
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                <li class="nav-item ml-1 " style="weight:100px;padding-left:20px;padding-right:20px;">
+                    <form   action="{% url 'home'%}">
+                        <button  type="submit" class=" btn-lg btn-close btn-close-white " aria-label="Close"
+                                 style=" padding: 10px 20px;font-size: 30px;border-radius: 10px;position: sticky;" ></button>
+                    </form>
+
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+            <div class="w3-center" style="margin-right: 13.92%;margin-left: 13.92%;" >
+
+
+                <textarea rows="32" cols="180" style=" background-color:var(--bbg);
+                color:var(--txt);font-size: 14px;font-weight: bolder;
+                border-radius: 15px 15px 0px 0px;border:5px;border-color: var(--bbg);resize: none;max-width: 100%;">
+                {{ texto|safe }}
+                </textarea>
+                <div class="w3-center" style="position: static;">
+                <div class="card-group" style="background-color:var(--bbg);border-radius: 0px 0px 15px 15px;">
+                    <div class="card" id="card-download" style="background-color:var(--bbg); height: 100px;">
+                        <div class="card-body download">
+                        <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                        <lord-icon
+                                delay="200"
+                                id="download"
+                                src="https://cdn.lordicon.com/xhdhjyqy.json"
+                                style="width:35px;height:35px;margin-left:-15%;margin-bottom:3%">
+
+                        </lord-icon>
+
+                        <h2 id="legenda" style="display: inline-block;padding-top: 7.5%">Download</h2>
+                        </div>
+                    </div>
+                    <div class="card" style="background-color:var(--bbg); height: 100px;">
+                        <div class="card-body share "id="card-share">
+                            <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                            <lord-icon
+                                    id="share"
+                                    delay="200"
+                                    src="https://cdn.lordicon.com/pbqduqha.json"
+                                    colors="primary:#121331"
+                                    state="hover"
+                                    style="width:35px;height:35px;margin-left:-15%;margin-bottom:3%">
+                            </lord-icon>
+                            <h2  style="display: inline-block;padding-top: 7.5%">Share</h2>
+                        </div>
+                    </div>
+                    <div class="card" style="background-color:var(--bbg);height: 100px;">
+                        <div class="card-body">
+                            <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                            <lord-icon id="trash"
+                                    src="https://cdn.lordicon.com/qsloqzpf.json"
+                                       delay="200"
+                                    style="width:35px;height:35px;margin-left:-15%;margin-bottom:3%">
+                            </lord-icon>
+                            <h2 id="legenda" style="display: inline-block;padding-top: 7.5%">Discard</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+
+                </div>
+                </div>
+    </div>
+
+        <footer class="w3-container w3-text-white w3-center  w3-margin-botton w3-padding-24 w3-xxlarge" style="margin-top: -1%;padding-bottom: 3%">
+            <a  class="w3-text-white" href="https://www.facebook.com/josepedro.aguiar.1" target="_blank" ><i class="fa fa-facebook-official  w3-xlarge"></i></a>
+            <a  class="w3-text-white" href="https://www.instagram.com/josepedroaguiar/" target="_blank"><i class="fa fa-instagram  w3-xlarge"></i></a>
+            <a  class="w3-text-white" href="https://github.com/josePedroAguiar" target="_blank"> <i class="fa fa-github  w3-xlarge"></i></a>
+            <a  class="w3-text-white" href="https://gitlab.com/jose_aguiar" target="_blank"> <i class="fa fa-gitlab w3-xlarge"></i></a>
+            <a  class="w3-text-white" href="https://twitter.com/JosPedroAguiar?t=fSceoPeup8lokThrsRzRcQ&s=09" target="_blank"><i class="fa fa-twitter  w3-xlarge"></i></a>
+            <a  class="w3-text-white" href="https://www.linkedin.com/in/jos%C3%A9-pedro-aguiar-219a7b225" target="_blank"><i class="fa fa-linkedin  w3-xlarge" ></i></a>
+            <p  style="font-size: 12px;margin-bottom:0px ">©2022 José Pedro Aguiar</p>
+        </footer>
+</div>
+
+    </body>
+
+<style>
+    :root {
+
+        --bg: #02b75a;
+        --txt: #2d2d2d;
+        --txt-1: black;
+        --txt2: #02b75a;
+        --txt2-nav: #212121;
+        --note : #02b75a;
+        --bbg: #d4d4d4;
+        color: black;
+        --per:0%;
+
+    }
+    .darkmode {
+        --bg:  #212121;
+        --txt: #ffffff;
+        --txt2: #02b75a;
+        --txt2-nav: #02b75a;
+        --bbg: #292929;
+        color: white;
+        --per:100%;
+    }
+    h2{
+        color: var(--txt);
+    }
+    .card{
+       background-color:var(--bbg);
+        border-radius:  0px 0px 15px 15px;
+    }
+    lord-icon {
+        filter: invert(var(--per));
+    }
+
+
+</style>
+    <script>
+        $(function () {
+            $('.card-body').mouseover(function(e) {
+                fIn();
+            });
+            $(".card-body").mouseout(function () {
+                fOut();
+            });
+
+            // or optionally using .hover() for in/out handling as per A. Wolff's comment
+            $(".card-body").hover(function () {
+                fIn();
+            }, function () {
+                fOut();
+            });
+        });
+
+        function fIn() {
+            document.getElementById("trash").setAttribute("trigger", "loop");
+        }
+
+        function fOut() {
+            document.getElementById("trash").setAttribute("trigger", "hover");
+        }
+        $(function () {
+            $("#card-share").mouseover(function(e) {
+                fInS();
+            });
+            $("#card-share").mouseout(function () {
+                fOutS();
+            });
+
+            // or optionally using .hover() for in/out handling as per A. Wolff's comment
+            $("#card-share").hover(function () {
+                fInS()
+            }, function () {
+                fOutS();
+            });
+        });
+
+        function fInS() {
+            document.getElementById("share").setAttribute("trigger", "loop");
+        }
+
+        function fOutS() {
+            document.getElementById("share").setAttribute("trigger", "hover");
+        }
+
+
+        $(function () {
+            $("#card-download").mouseover(function(e) {
+                fInD();
+            });
+            $("#card-download").mouseout(function () {
+                fOutD();
+            });
+
+            // or optionally using .hover() for in/out handling as per A. Wolff's comment
+            $("#card-download").hover(function () {
+                fInD();
+            }, function () {
+                fOutD();
+            });
+        });
+
+        function fInD() {
+            document.getElementById("download").setAttribute("trigger", "loop");
+        }
+
+        function fOutD() {
+            document.getElementById("download").setAttribute("trigger", "hover");
+        }
+    </script>
+{% endblock %}

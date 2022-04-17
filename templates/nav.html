@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block body %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="{% url 'home' %}" style=" display: inline-flex;font-size:34px; margin-top: -10px;font-family: 'Varela Round';">
+
+         <i>
+             <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+            <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+            <lord-icon src="https://cdn.lordicon.com/rwzqttux.json" colors="primary:#ffffff"
+                    style="color:white;width:50px;height:50px;transform: rotate(-6deg); margin-right: 10px"></lord-icon>
+        </i>
+            <h2 style="display: inline-flex; font-family:'Varela Round',sans-serif;font-size: 36px;margin-top: 10px;margin-bottom:-10px "><b>GetTxt</b></h2></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto m-2 mb-lg-0">
+                  <span class="w3-hide-small w3-hide-medium">
+                    <li class="nav-item ml-1 " style="">
+                      <i class="bi bi-sun"></i>
+                    </li>
+                  </span>
+                <li class="nav-item ml-1 " style="padding-left:10px;padding-right:10px;">
+                    <span class="w3-hide-large"><p style="margin-bottom: 2px">Darkmode</p></span>
+                    <div class="value" id="onOffSwitch">
+                        <div class="onoffswitch">
+                            <label class="switch">
+                                <input id="button_switch" type="checkbox">
+                                <div class="slider round"></div>
+                            </label>
+                        </div>
+                    </div>
+
+                </li>
+                <li class="nav-item ml-1 "style="padding-right:20px;">
+                    <span class="w3-hide-small w3-hide-medium"> <i class="fa fa-moon-o"></i></span>
+                </li>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<body class="body">
+{% block content %}
+
+{% endblock %}
+</body>
+<footer class="w3-container w3-text-white w3-center  w3-margin-botton w3-padding-24 w3-xxlarge" style="margin-top: 10%">
+
+    <p  style="font-size: 24px;margin-bottom:-5px;">About Me</p>
+    <p  style="font-size: 12px;margin-bottom:-5px;">I'm <a href="https://josepedroaguiar.pythonanywhere.com/"  target="_blank">José Pedro Aguiar.</a> I'm a software engineer,graduate at the Universidade de Coimbra,from Portugal. <br>If you want to know more about me and my projects visit my <a href="https://josepedroaguiar.pythonanywhere.com/"  target="_blank">website</a> </p>
+    <br style="font-size: 12px;">
+    <p  style="font-size: 24px;margin-bottom:-5px;">Follow Me</p>
+    <a  class="w3-text-white" href="https://www.facebook.com/josepedro.aguiar.1" target="_blank" ><i class="fa fa-facebook-official  w3-xlarge"></i></a>
+    <a  class="w3-text-white" href="https://www.instagram.com/josepedroaguiar/" target="_blank"><i class="fa fa-instagram  w3-xlarge"></i></a>
+    <a  class="w3-text-white" href="https://github.com/josePedroAguiar" target="_blank"> <i class="fa fa-github  w3-xlarge"></i></a>
+    <a  class="w3-text-white" href="https://gitlab.com/jose_aguiar" target="_blank"> <i class="fa fa-gitlab w3-xlarge"></i></a>
+    <a  class="w3-text-white" href="https://twitter.com/JosPedroAguiar?t=fSceoPeup8lokThrsRzRcQ&s=09" target="_blank"><i class="fa fa-twitter  w3-xlarge"></i></a>
+    <a  class="w3-text-white" href="https://www.linkedin.com/in/jos%C3%A9-pedro-aguiar-219a7b225" target="_blank"><i class="fa fa-linkedin  w3-xlarge" ></i></a>
+    <p  style="font-size: 12px;margin-bottom:10px ">©2022 José Pedro Aguiar</p>
+</footer>
+{% endblock %}
