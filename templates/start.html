@@ -1,0 +1,100 @@
+
+{% extends 'nav.html' %}
+{% block content %}
+<!-- Header -->
+<header class="w3-container w3-center" style=" padding:128px 16px;">
+    <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+
+    <h1 class="w3-margin w3-jumbo" style="font-family:'Varela Round',sans-serif;">GetTxt</h1>
+    <p class="w3-xlarge" style="font-family:'Varela Round',sans-serif;">Get All The Text Of Your Images</p>
+    <a href="{% url 'home' %}">
+    <div>
+    <lord-icon id="click"
+            src="https://cdn.lordicon.com/iifryyua.json"
+            trigger="loop" colors="primary:#D4D4D4"
+            delay="250"
+            style="width:250px;height:250px">
+    </lord-icon>
+    <button type="button" class="btn btn-primary style" style="background-color:var(--bbg); color: var(--txt);border-color: var(--bbg);padding-left: 50px;padding-right: 50px;padding-top: 12.5px;padding-bottom: 12.5px; font-size: 24px">Let's Start</button>
+    </div>
+    </a>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container" style="color: var(--txt)">
+    <div class="w3-content">
+        <div class="w3-twothird">
+            <h1>How it works?</h1>
+            <h5 class="w3-padding-32">Step by step</h5>
+
+            <ul class="w3-text-grey">
+                <li style="line-height: 24px">Click on button "Let's Start".</li>
+                <li style="line-height: 24px">Click on the upload icon.</li>
+                <li style="line-height: 24px">Select a your image and submit.</li>
+                <li style="line-height: 24px">Wait a momment and <b style="font-weight: bolder; font-size: 18px">Voila!</b></li>
+            </ul>
+        </div>
+
+        <div class="w3-third w3-center">
+            <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+            <lord-icon id="container"
+                    src="https://cdn.lordicon.com/buczzbzt.json"
+                        trigger="loop"
+                        delay="250"
+                       colors="primary:#000000"
+                    style="width:300px;height:300px;">
+            </lord-icon>
+        </div>
+    </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container" style="filter:invert(var(--per))">
+    <div class="w3-content">
+        <div class="w3-third w3-center">
+            <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+            <lord-icon
+                    src="https://cdn.lordicon.com/hvnymaak.json"
+                    trigger="loop"
+                    colors="primary:#000000"
+                    style="width:250px;height:250px">
+            </lord-icon>        </div>
+        <h1>Info:</h1>
+
+        Project with the simple intention of developing and remembering aspects of Django.
+        <h5 class="w3-padding-32">Future updates:</h5>
+        <ul class="w3-text-grey" style="margin-left: 100px">
+            <li>
+        Create files other than .txt.</li>
+            <li>Accept other languages..</li>
+        </ul>
+        <div class="w3-twothird">
+
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+<style>
+header{
+
+   background-color:#02B75A;
+
+    /*background: rgb(2,0,36);
+    background: linear-gradient(31deg, rgba(2,0,36,1) 0%, rgba(2,99,65,1) 36%, rgba(2,99,65,1) 36%, rgb(2,183,90) 100%);
+    background: rgb(156,182,169);
+    background: linear-gradient(31deg, #9cb6a9 0%, rgba(51,197,122,1) 23%, rgba(2,183,90,1) 57%);*/
+}
+nav{
+background-color: transparent;
+}
+#click{
+   filter: invert(var(--per));
+}
+#container{
+   filter: invert(var(--per));
+}
+</style>
+{% endblock %}

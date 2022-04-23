@@ -46,7 +46,7 @@
 
         @-webkit-keyframes animatebottom {
             from { bottom:-100px; opacity:0 }
-            to { bottom:0px; opacity:1 }
+            to { bottom:0; opacity:1 }
         }
 
         @keyframes animatebottom {
@@ -64,17 +64,9 @@
 
         function myFunction() {
             myVar = setTimeout(showPage, 3000);
-            if (darkMode === 'enabled') {
-                document.getElementById("loader2").style.display = "none";
-            }
-            else {
-                document.getElementById("loader1").style.display = "none";
-            }
-
         }
 
         function showPage() {
-            document.getElementById("loader2").style.display = "none";
             document.getElementById("loader1").style.display = "none";
             document.getElementById("myDiv").style.display = "block";
         }
@@ -93,29 +85,12 @@
        <lord-icon
                    src="https://cdn.lordicon.com/rwzqttux.json"
                    trigger="loop"
-
+                   colors="primary:#D4D4D4"
                    style="width:250px;height:250px">
            </lord-icon>
 
         </div>
-    <div id="loader2"><script src="https://cdn.lordicon.com/lusqsztk.js"></script>
-        <!---
-      <lord-icon
-               src="https://cdn.lordicon.com/buczzbzt.json"
-               trigger="loop"
-                colors="primary:#ffffff"
-               style="width:250px;height:250px">
-           <script src="https://cdn.lordicon.com/lusqsztk.js"></script></lord-icon>
-            !-->
 
-        <lord-icon
-                src="https://cdn.lordicon.com/rwzqttux.json"
-                trigger="loop"
-                colors="primary:#ffffff"
-                style="width:250px;height:250px">
-        </lord-icon>
-
-    </div>
     <div style="display:none;" id="myDiv" class="animate-bottom">
     <nav class="navbar navbar-expand-lg" style="background: transparent; height: 70px;">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -171,6 +146,7 @@
                 <div class="w3-center" style="position: static;">
                 <div class="card-group" style="background-color:var(--bbg);border-radius: 0px 0px 15px 15px;">
                     <div class="card" id="card-download" style="background-color:var(--bbg); height: 100px;">
+                        <a href="{% url 'download' %}">
                         <div class="card-body download">
                         <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
                         <lord-icon
@@ -182,11 +158,15 @@
                         </lord-icon>
 
                         <h2 id="legenda" style="display: inline-block;padding-top: 7.5%">Download</h2>
+
                         </div>
+                        </a>
                     </div>
                     <div class="card" style="background-color:var(--bbg); height: 100px;">
+                        <a onclick="getURL()">
                         <div class="card-body share "id="card-share">
                             <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+
                             <lord-icon
                                     id="share"
                                     delay="200"
@@ -195,10 +175,13 @@
                                     state="hover"
                                     style="width:35px;height:35px;margin-left:-15%;margin-bottom:3%">
                             </lord-icon>
+
                             <h2  style="display: inline-block;padding-top: 7.5%">Share</h2>
                         </div>
+                        </a>
                     </div>
                     <div class="card" style="background-color:var(--bbg);height: 100px;">
+                        <a href="{% url 'home' %}">
                         <div class="card-body">
                             <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
                             <lord-icon id="trash"
@@ -208,6 +191,7 @@
                             </lord-icon>
                             <h2 id="legenda" style="display: inline-block;padding-top: 7.5%">Discard</h2>
                         </div>
+                        </a>
                     </div>
                 </div>
                 <div class="container">
@@ -230,28 +214,7 @@
     </body>
 
 <style>
-    :root {
 
-        --bg: #02b75a;
-        --txt: #2d2d2d;
-        --txt-1: black;
-        --txt2: #02b75a;
-        --txt2-nav: #212121;
-        --note : #02b75a;
-        --bbg: #d4d4d4;
-        color: black;
-        --per:0%;
-
-    }
-    .darkmode {
-        --bg:  #212121;
-        --txt: #ffffff;
-        --txt2: #02b75a;
-        --txt2-nav: #02b75a;
-        --bbg: #292929;
-        color: white;
-        --per:100%;
-    }
     h2{
         color: var(--txt);
     }
@@ -337,5 +300,11 @@
         function fOutD() {
             document.getElementById("download").setAttribute("trigger", "hover");
         }
+
+            function getURL() {
+            alert("The URL of this page is: " + window.location.href);
+        }
+
     </script>
+
 {% endblock %}

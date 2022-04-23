@@ -50,24 +50,25 @@
         --note : #02b75a;
         --bbg: #d4d4d4;
         color: black;
+        --per:0%;
+
     }
-
-
     .darkmode {
-        --bg:  #212121;
+
+        /*#212121;*/
+        --bg:#02b75a;
         --txt: #ffffff;
         --txt2: #02b75a;
-        --txt2-nav: #02b75a;
+        --txt2-nav: #212121;
         --bbg: #292929;
         color: white;
+        --per:100%;
     }
     h1{
         font-family: 'Oxygen',sans-serif;
-        color: var(--txt);
     }
     h1{
         font-family: 'Oxygen',sans-serif;
-        color:#FFFFFF ;
     }
     .foote i{
         color: var(--txt);
@@ -173,11 +174,11 @@
     }
 
     input:checked + .slider {
-        background-color: var(--txt2);
+        background-color: #212121;
     }
 
     input:focus + .slider {
-        box-shadow: 0 0 1px var(--txt2);
+        box-shadow: 0 0 1px #212121;
     }
 
     input:checked + .slider:before {
@@ -253,6 +254,7 @@
             disableDarkMode();
         }
     });
+
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
